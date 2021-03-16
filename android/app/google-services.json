@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "950474583432",
+    "project_id": "mcq-app-8f0ad",
+    "storage_bucket": "mcq-app-8f0ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950474583432:android:a78967c26a246fdf9cde3d",
+        "android_client_info": {
+          "package_name": "com.binarasachin.mcq_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950474583432-8djtvdpmlcu26qpqm5vqraag10dncpbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi9aGefI6IdGuql-jZCAFmp7nS4OwXtsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950474583432-8djtvdpmlcu26qpqm5vqraag10dncpbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
