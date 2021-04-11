@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'core/models/user_model.dart';
+import 'core/provider/paper_provider.dart';
 import 'core/services/auth.dart';
 import 'view/wrapper.dart';
 
@@ -14,14 +15,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
       value: AuthService().user,
-      child: MaterialApp(
-        title: 'MCQ App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+      child: ChangeNotifierProvider(
+        create: (context) => PaperProvider(),
+        child: MaterialApp(
+          title: 'MCQ App',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: Wrapper(),
         ),
-        debugShowCheckedModeBanner: false,
-        home: Wrapper(),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mcq_app/core/models/answer_model.dart';
 import 'package:mcq_app/core/models/paper_model.dart';
 import 'package:mcq_app/core/models/question_model.dart';
 
@@ -29,6 +28,12 @@ class DatabaseService {
   }
 
   //save paper
+  Future savePaper(Paper paper, List<Question> questions) async {
+    // return await teacherCollection.document(uid).setData({
+    //   'email': email,
+    //   'password': password,
+    // });
+  }
 
   //get papers stream
   Stream<List<Paper>> get papers {
@@ -36,33 +41,10 @@ class DatabaseService {
   }
 
   //get questions
-  Stream<List<Question>> getQuestions(Paper paper) {
-    final CollectionReference questionsCollection = Firestore.instance.collection(paper.collectionName);
-    return questionsCollection.snapshots().map(_questionListFromSnapshot);
-  }
-
-  List<Question> _questionListFromSnapshot(QuerySnapshot snapshot) {
-    print(snapshot);
-    return snapshot.documents.map((doc) {
-      return Question(
-          text: doc.data['text'] ?? 'Error Getting Data',
-          correctAnswer: doc.data['correct'] ?? 'Error Getting Data',
-          answers: [
-            Answer(
-              text: doc.data['answer_1'] ?? 'Error Getting Data',
-            ),
-            Answer(
-              text: doc.data['answer_2'] ?? 'Error Getting Data',
-            ),
-            Answer(
-              text: doc.data['answer_3'] ?? 'Error Getting Data',
-            ),
-            Answer(
-              text: doc.data['answer_4'] ?? 'Error Getting Data',
-            ),
-          ]);
-    }).toList();
-  }
+  // Stream<List<Question>> getQuestions(Paper paper) {
+  //   final CollectionReference questionsCollection = Firestore.instance.collection(paper.collectionName);
+  //   return questionsCollection.snapshots().map(_questionListFromSnapshot);
+  // }
 
   //paper list from snapshot
   List<Paper> _paperListFromSnapshot(QuerySnapshot snapshot) {

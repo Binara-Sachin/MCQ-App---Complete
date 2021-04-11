@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mcq_app/core/models/paper_model.dart';
-import 'package:mcq_app/view/screens/home_screen/paper_tile.dart';
 import 'package:provider/provider.dart';
+
+import 'file:///D:/Projects/MCQ%20App/mcq_app/lib/view/screens/home_screen/widgets/paper_tile.dart';
 
 class PaperList extends StatefulWidget {
   @override
@@ -12,7 +13,12 @@ class _PaperListState extends State<PaperList> {
   @override
   Widget build(BuildContext context) {
     final papers = Provider.of<List<Paper>>(context);
-    //print("Paper Collection " + papers.length.toString());
+
+    if (papers == null) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
 
     return GridView.builder(
       padding: EdgeInsets.all(10.0),

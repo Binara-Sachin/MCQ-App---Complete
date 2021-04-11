@@ -1,5 +1,5 @@
 class Answer {
-  final String text;
+  final String answerText;
 
-  Answer({this.text});
+  Answer({this.answerText});
 }

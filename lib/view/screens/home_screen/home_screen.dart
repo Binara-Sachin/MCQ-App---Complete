@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mcq_app/core/models/paper_model.dart';
 import 'package:mcq_app/core/services/auth.dart';
 import 'package:mcq_app/core/services/database.dart';
-import 'package:mcq_app/view/screens/home_screen/paper_list.dart';
 import 'package:provider/provider.dart';
+
+import 'file:///D:/Projects/MCQ%20App/mcq_app/lib/view/screens/home_screen/widgets/paper_list.dart';
 
 class HomeScreen extends StatelessWidget {
   final AuthService _authService = AuthService();
@@ -13,10 +14,10 @@ class HomeScreen extends StatelessWidget {
     return StreamProvider<List<Paper>>.value(
       value: DatabaseService().papers,
       child: Scaffold(
-        backgroundColor: Colors.brown[100],
+        //backgroundColor: Colors.brown[100],
         appBar: AppBar(
-          backgroundColor: Colors.brown[400],
-          elevation: 0.0,
+          //backgroundColor: Colors.brown[400],
+          //elevation: 0.0,
           title: Text("Home"),
           actions: <Widget>[
             FlatButton.icon(

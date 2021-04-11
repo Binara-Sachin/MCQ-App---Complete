@@ -3,13 +3,18 @@ class Paper {
   final String subject;
   final String collectionName;
   final Duration duration;
-  //final List<Question> questions;
 
   Paper({
     this.name,
     this.subject,
     this.collectionName,
     this.duration,
-    //this.questions,
   });
 }
+
+// final Paper samplePaper = Paper(
+//   name: "Sample Physics Paper",
+//   subject: "Physics",
+//   collectionName: "paper_002",
+//   duration: Duration(minutes: 10),
+// );
